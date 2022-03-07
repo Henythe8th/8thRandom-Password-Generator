@@ -2,14 +2,14 @@
 //Program to generate password
 var password = document.getElementById("password");
 
-    function genPassword(){
+    function genPassword() {
         var allUserchars =[]
         var numberChars = [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ];
 var uppercaseChars = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
 var lowercaseChars = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
 var specialChars = [ '!', '@', '#', '$', '%', '^', '&', '*' ];
         var howManychars =prompt("How long do you want your password to be?")
-        
+
 
         var wantsNumber = confirm("Do you want numbers?")
         var wantsCapital = confirm("Do you want uppercase letters?")
@@ -24,11 +24,15 @@ var specialChars = [ '!', '@', '#', '$', '%', '^', '&', '*' ];
         var passwordLength = 12;
         var password ="";
 
-        for (var i =0; i = passwordLength; i++){
-            var random = Math.floor(Math.random() * chars.length);
-            password += chars.substring(random, random +1)
+        for (var i =0; i <= passwordLength; i++) {
+            var randomNumber =Math.floor(Math.random() *chars.length);
+            password += chars.substring(randomNumber, random +1)
         }
+        return "Generated Password"
     }
+    
+
+    document.getElementById("password").value= password;
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
